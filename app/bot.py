@@ -14,8 +14,7 @@ def mitada_session():
     return random.choices([True, False], weights=[5, 95], k=1)[0]
 
 def calculate_aura(mitadas):
-    max_mitadas = 100
-    return min(1.0, mitadas / max_mitadas)
+    return min(1.0, (mitadas // 10) * 0.1)
 
 def update_mitadas_and_aura(author, mitadas_delta):
     author.increment_mitadas(mitadas_delta)
